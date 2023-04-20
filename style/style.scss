@@ -74,6 +74,7 @@ body {
 			.link {
 				display: flex;
 				position: relative;
+				margin-left: -23px;
 				margin-top: 30px;
 				margin-bottom: 60px;
 				color: $gold;
@@ -88,32 +89,32 @@ body {
 				content: '';
 				position: absolute;
 				top: 50%;
-				right: -25px;
+				left: 80px;
 				width: 12px;
 				height: 3px;
 				background-color: $gold;
 				transform: $arrow;
-				transition: right 0.3s;
+				transition: left 0.3s;
 			}
 
 			.link::after {
 				content: '';
 				position: absolute;
 				top: 50%;
-				right: -29px;
+				left: 90px;
 				border-top: 5px solid transparent;
 				border-bottom: 5px solid transparent;
 				border-left: 5px solid $gold;
 				transform: $arrow;
-				transition: right 0.3s;
+				transition: left 0.3s;
 			}
 
 			.link:hover::before {
-				right: -34px;
+				left: 100px;
 			}
 
 			.link:hover::after {
-				right: -38px;
+				left: 110px;
 			}
 		}
 	}
