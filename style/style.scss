@@ -1,0 +1,149 @@
+$black: #000000;
+$gold: goldenrod;
+$white: #fff;
+$font: 'Roboto', sans-serif;
+$arrow: translateY(-50%);
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $font;
+	background-color: $white;
+}
+
+#carts {
+	display: flex;
+	flex-direction: column;
+	padding: 35px 20px;
+
+	.box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.images {
+			position: relative;
+
+			.clothes {
+				width: 90vw;
+			}
+
+			.heart {
+				position: absolute;
+				box-sizing: content-box;
+				background: $white;
+				top: 30px;
+				right: 30px;
+				width: 20px;
+				padding: 5px;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+		}
+
+		.texts {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.title {
+				text-align: center;
+				color: $black;
+				margin-top: 30px;
+				margin-bottom: 10px;
+				font-family: $font;
+				font-weight: 300;
+				font-size: 21px;
+				text-transform: uppercase;
+			}
+
+			.subtitle {
+				color: $black;
+				font-family: $font;
+				font-weight: 300;
+				font-size: 16px;
+				text-align: center;
+			}
+
+			.link {
+				display: flex;
+				position: relative;
+				margin-top: 30px;
+				margin-bottom: 60px;
+				color: $gold;
+				font-family: $font;
+				font-weight: bold;
+				font-size: 14px;
+				text-transform: uppercase;
+				text-decoration: none;
+			}
+
+			.link::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: -25px;
+				width: 12px;
+				height: 3px;
+				background-color: $gold;
+				transform: $arrow;
+				transition: right 0.3s;
+			}
+
+			.link::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: -29px;
+				border-top: 5px solid transparent;
+				border-bottom: 5px solid transparent;
+				border-left: 5px solid $gold;
+				transform: $arrow;
+				transition: right 0.3s;
+			}
+
+			.link:hover::before {
+				right: -34px;
+			}
+
+			.link:hover::after {
+				right: -38px;
+			}
+		}
+	}
+}
+
+@media (min-width: 500px) {
+	#carts {
+		flex-direction: row;
+		justify-content: space-around;
+		padding: 35px 40px;
+
+		.box {
+			.images {
+				.clothes {
+					width: 31vw;
+          padding: 2px;
+				}
+			}
+
+			.texts {
+				padding: 10px;
+
+				.title {
+					margin-top: 50px;
+				}
+			}
+		}
+
+		.box:nth-of-type(2) {
+			flex-direction: column-reverse;
+		}
+	}
+}
